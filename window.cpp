@@ -4,7 +4,7 @@
 //#include <cmath>  // for sine stuff
 //double max=0.0;
 
-Window::Window() : func(0),count(0)
+Window::Window() : //func(0),count(0)
 {
 	
 	//knob = new QwtKnob;
@@ -32,12 +32,12 @@ Window::Window() : func(0),count(0)
 		xData[index] = index;
 		yData[index] = 0;
 	}
-	for( int index=0; index<plotDataSize2; ++index )
+/*	for( int index=0; index<plotDataSize2; ++index )
 	{
 		xData2[index] = index;
 		yData2[index] = 0;
 	}
-
+*/
 	// make a plot curve from the data and attach it to the plot
 	curve->setSamples(xData, yData, plotDataSize);
 	curve->attach(plot);
@@ -45,7 +45,7 @@ Window::Window() : func(0),count(0)
 	plot->replot();
 	plot->show();
 	
-	curve2->setSamples(xData2, yData2, plotDataSize2);
+	curve2->setSamples(xData, yData, plotDataSize);
 	curve2->attach(plot2);
 
 	plot2->replot();
@@ -100,9 +100,9 @@ void Window::timerEvent( QTimerEvent * )
 		curve->setSamples(xData, yData, plotDataSize);
 		plot->replot();
 		
-		memmove( yData2, yData2+1, (plotDataSize2-1) * sizeof(double) );
-		yData[plotDataSize2-1] = value;
-		curve2->setSamples(xData2, yData2, plotDataSize2);
+		//memmove( yData2, yData2+1, (plotDataSize2-1) * sizeof(double) );
+		//yData[plotDataSize2-1] = value;
+		curve2->setSamples(xData, yData, plotDataSize);
 		plot2->replot();
 	}
 	// set the thermometer value
@@ -111,8 +111,8 @@ void Window::timerEvent( QTimerEvent * )
 
 
 // this function can be used to change the gain of the A/D internal amplifier
-void Window::setFunc(double func)
-{
+//void Window::setFunc(double func)
+//{
 	// for example purposes just change the amplitude of the generated input
-	this->func = func;
-}
+//	this->func = func;
+//}
