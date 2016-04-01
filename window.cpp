@@ -4,7 +4,7 @@
 //#include <cmath>  // for sine stuff
 //double max=0.0;
 
-Window::Window() : //func(0),count(0)
+Window::Window()  //func(0),count(0)
 {
 	
 	//knob = new QwtKnob;
