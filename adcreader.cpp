@@ -68,7 +68,7 @@ static void writeReg(int fd, uint8_t v)
     pabort("can't send spi message");
 }
 
-static uint8_t readReg(int fd)
+/*static uint8_t readReg(int fd)
 {
 	int ret;
 	uint8_t tx1[1];
@@ -87,7 +87,7 @@ static uint8_t readReg(int fd)
 	  
 	return rx1[0];
 }
-
+*/
 
 static int readData(int fd)
 {
