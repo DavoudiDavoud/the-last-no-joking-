@@ -44,7 +44,7 @@ private:
 	QHBoxLayout  *hLayout;  // horizontal layout
 
 	static const int plotDataSize = 1000;
-	static const int plotDataSize2 = 1000;
+	static const int plotDataSize2 = 2000;
 
 
 	// data arrays for the plot
